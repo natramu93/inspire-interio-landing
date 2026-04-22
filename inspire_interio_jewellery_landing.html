@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspire Interio — Jewellery Showroom Interiors That Build Trust & Close High-Ticket Sales</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --obsidian:#0F0D0B;
+  --charcoal:#1A1612;
+  --ivory:#FAF7F0;
+  --cream:#EFE7D5;
+  --warm-white:#FDFBF5;
+  --gold:#B8923F;
+  --gold-light:#D4AE5A;
+  --gold-pale:#E8D49C;
+  --burgundy:#5C1F1F;
+  --burgundy-deep:#3E1414;
+  --bronze:#8B6F47;
+  --pearl:#F5F1E8;
+  --text-primary:#1A1612;
+  --text-secondary:#4A4238;
+  --text-muted:#8A7F6E;
+  --red:#8B2020;
+  --border:rgba(26,22,18,0.08)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,247,240,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--obsidian);letter-spacing:1px}
+.nav-logo span{color:var(--gold)}
+.nav-cta{background:var(--obsidian);color:var(--gold);padding:9px 20px;border-radius:4px;border:1px solid var(--gold);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;letter-spacing:.5px}
+.nav-cta:hover{background:var(--gold);color:var(--obsidian)}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:96px 40px 0;max-width:1200px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(184,146,63,0.1);border:1px solid rgba(184,146,63,0.25);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.2vw,54px);font-weight:700;line-height:1.08;color:var(--obsidian);margin-bottom:6px;letter-spacing:-0.5px}
+.hero h1 em{font-style:italic;color:var(--gold);position:relative}
+.hero h1 em::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:4px;background:rgba(184,146,63,0.25);transform:skewX(-6deg)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2vw,24px);color:var(--burgundy);font-style:italic;margin-bottom:14px}
+.hero p{font-size:14px;line-height:1.7;color:var(--text-secondary);margin-bottom:20px}
+.hero-cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--obsidian);color:var(--gold);padding:13px 28px;border-radius:4px;border:1px solid var(--gold);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;letter-spacing:1px;text-transform:uppercase}
+.btn-primary:hover{background:var(--gold);color:var(--obsidian);transform:translateY(-2px);box-shadow:0 8px 24px rgba(184,146,63,0.25)}
+.btn-secondary{background:transparent;color:var(--obsidian);padding:13px 28px;border-radius:4px;border:1px solid rgba(26,22,18,0.3);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;letter-spacing:1px;text-transform:uppercase}
+.btn-secondary:hover{border-color:var(--obsidian);background:rgba(26,22,18,0.04)}
+.hero-right{display:flex;flex-direction:column;gap:12px}
+.hero-img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-img{border-radius:4px;overflow:hidden;position:relative;height:160px;box-shadow:0 12px 40px rgba(15,13,11,0.18);border:1px solid rgba(184,146,63,0.2)}
+.hero-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-img:hover img{transform:scale(1.05)}
+.hero-img-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(15,13,11,0.9));color:var(--gold-pale);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.hero-img.tall{grid-column:1/3;height:140px}
+.hero-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hero-stat{background:var(--obsidian);border-radius:4px;padding:12px 8px;text-align:center;border:1px solid rgba(184,146,63,0.25)}
+.hero-stat .n{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--gold)}
+.hero-stat .l{font-size:8px;color:var(--gold-pale);opacity:.7;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+.ticker{background:var(--obsidian);color:var(--gold-pale);padding:12px 32px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:12px;font-weight:500;letter-spacing:.5px}
+.ticker b{color:var(--gold)}
+.problem{padding:56px 40px;background:var(--obsidian);color:#fff;position:relative;overflow:hidden}
+.problem::before{content:'';position:absolute;top:0;right:0;bottom:0;width:40%;background:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80') center/cover no-repeat;opacity:.12}
+.problem .inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.section-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.problem h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.2vw,38px);font-weight:700;line-height:1.2;margin-bottom:28px;max-width:720px}
+.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.problem-card{background:rgba(255,255,255,0.03);border:1px solid rgba(184,146,63,0.15);border-radius:4px;padding:22px;transition:all .3s;backdrop-filter:blur(4px)}
+.problem-card:hover{background:rgba(184,146,63,0.06);border-color:rgba(184,146,63,0.4);transform:translateY(-3px)}
+.problem-icon{font-size:22px;margin-bottom:10px}
+.problem-card h3{font-size:14px;font-weight:600;margin-bottom:6px;color:var(--gold-light)}
+.problem-card p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.55}
+.stats{padding:56px 40px;background:linear-gradient(180deg,var(--pearl) 0%,var(--ivory) 100%)}
+.stats .inner{max-width:1200px;margin:0 auto}
+.stats h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.2vw,38px);text-align:center;margin-bottom:6px;font-weight:700}
+.stats-sub{text-align:center;font-size:13px;color:var(--text-secondary);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6;font-style:italic}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.stat-card{background:#fff;border-radius:4px;padding:24px 14px;text-align:center;border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--obsidian),var(--gold));transform:scaleX(0);transition:transform .3s}
+.stat-card:hover::before{transform:scaleX(1)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(15,13,11,0.1)}
+.stat-card .big{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--obsidian);line-height:1}
+.stat-card .big .a{color:var(--gold)}
+.stat-card .desc{font-size:11px;color:var(--text-secondary);margin-top:6px;line-height:1.45}
+.stat-card .src{font-size:9px;color:var(--text-muted);margin-top:6px;font-style:italic}
+.showcase{padding:48px 40px;background:var(--ivory)}
+.showcase .inner{max-width:1200px;margin:0 auto}
+.showcase h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.6vw,32px);text-align:center;margin-bottom:8px;font-weight:700}
+.showcase-sub{text-align:center;font-size:13px;color:var(--text-muted);margin-bottom:24px;font-style:italic}
+.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.showcase-item{border-radius:4px;overflow:hidden;position:relative;height:220px;cursor:pointer;box-shadow:0 8px 24px rgba(15,13,11,0.12);border:1px solid rgba(184,146,63,0.15)}
+.showcase-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.showcase-item:hover img{transform:scale(1.08)}
+.showcase-item .overlay{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(15,13,11,0.85));color:var(--gold-pale)}
+.showcase-item .overlay h4{font-family:'Cormorant Garamond',serif;font-size:15px;margin-bottom:2px;color:#fff;font-weight:600}
+.showcase-item .overlay span{font-size:10px;opacity:.85;letter-spacing:1px;text-transform:uppercase}
+.services{padding:56px 40px;background:var(--warm-white);position:relative;overflow:hidden}
+.services::before{content:'';position:absolute;top:0;left:0;bottom:0;width:35%;background:url('https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=600&q=80') center/cover no-repeat;opacity:.05}
+.services .inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.services h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.2vw,38px);text-align:center;margin-bottom:32px;font-weight:700}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:rgba(255,255,255,0.96);border-radius:4px;padding:24px;border:1px solid var(--border);transition:all .3s;backdrop-filter:blur(8px)}
+.svc:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(15,13,11,0.08);border-color:rgba(184,146,63,0.3)}
+.svc-icon{font-size:22px;margin-bottom:10px}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;margin-bottom:6px}
+.svc p{font-size:12px;color:var(--text-secondary);line-height:1.6}
+.svc-tag{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:100px;font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.proof{padding:52px 40px;position:relative;overflow:hidden;color:#fff}
+.proof-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1514302240736-b1fee5985889?w=1400&q=80') center/cover no-repeat}
+.proof-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(15,13,11,0.95),rgba(26,22,18,0.92))}
+.proof .inner{max-width:1000px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.proof h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.2vw,38px);margin-bottom:6px;font-weight:700}
+.proof-sub{font-size:13px;color:var(--gold-pale);opacity:.7;margin-bottom:28px;font-style:italic}
+.proof-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.proof-item{padding:20px 10px;border:1px solid rgba(184,146,63,0.25);border-radius:4px;background:rgba(184,146,63,0.05);transition:all .3s;backdrop-filter:blur(4px)}
+.proof-item:hover{background:rgba(184,146,63,0.12);border-color:rgba(184,146,63,0.5)}
+.proof-item .num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--gold)}
+.proof-item .lbl{font-size:10px;color:var(--gold-pale);opacity:.8;margin-top:4px;line-height:1.3;letter-spacing:.5px}
+.process{padding:56px 40px;background:var(--ivory)}
+.process .inner{max-width:1000px;margin:0 auto;text-align:center}
+.process h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.2vw,38px);margin-bottom:32px;font-weight:700}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:16px;position:relative}
+.step::after{content:'—';position:absolute;right:-6px;top:36px;font-size:18px;color:var(--gold)}
+.step:last-child::after{display:none}
+.step-num{width:42px;height:42px;border-radius:50%;background:var(--obsidian);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;margin:0 auto 10px;border:1px solid var(--gold)}
+.step h3{font-size:13px;font-weight:600;margin-bottom:4px}
+.step p{font-size:11px;color:var(--text-muted);line-height:1.5}
+.founder{padding:40px;position:relative;overflow:hidden}
+.founder-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1400&q=80') center/cover no-repeat}
+.founder-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(239,231,213,0.96),rgba(245,241,232,0.93))}
+.founder .inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:24px;position:relative;z-index:1}
+.founder-avatar{width:80px;height:80px;border-radius:50%;background:var(--obsidian);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);font-weight:700;border:2px solid var(--gold);flex-shrink:0}
+.founder-info h3{font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:2px;font-weight:700}
+.founder-title{font-size:12px;color:var(--gold);font-weight:600;margin-bottom:8px;letter-spacing:.5px}
+.founder-info p{font-size:12px;color:var(--text-secondary);line-height:1.6}
+.founder-creds{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.founder-cred{padding:3px 10px;border-radius:2px;background:rgba(15,13,11,0.08);font-size:9px;font-weight:600;color:var(--obsidian);letter-spacing:.5px;text-transform:uppercase}
+.cta-section{padding:56px 40px;position:relative;overflow:hidden;color:#fff}
+.cta-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=1400&q=80') center/cover no-repeat}
+.cta-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(15,13,11,0.96),rgba(26,22,18,0.93))}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;position:relative;z-index:1}
+.cta-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.2vw,38px);margin-bottom:12px;line-height:1.2;font-weight:700}
+.cta-text h2 em{color:var(--gold);font-style:italic}
+.cta-text p{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:16px}
+.cta-urgency{display:inline-flex;align-items:center;gap:6px;background:rgba(184,146,63,0.12);border:1px solid rgba(184,146,63,0.3);padding:7px 12px;border-radius:2px;font-size:11px;font-weight:600;color:var(--gold-light);letter-spacing:.5px}
+.cta-urgency::before{content:'💎'}
+.cta-benefits{margin-top:20px}
+.cta-benefits li{list-style:none;font-size:12px;color:rgba(255,255,255,0.72);margin-bottom:8px;padding-left:18px;position:relative;line-height:1.55}
+.cta-benefits li::before{content:'◆';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:8px;top:4px}
+.cta-form{background:rgba(255,255,255,0.05);border:1px solid rgba(184,146,63,0.2);border-radius:4px;padding:28px;backdrop-filter:blur(12px)}
+.cta-form h3{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:16px;text-align:center;font-weight:700;color:var(--gold-pale)}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:3px}
+.fg input,.fg select,.fg textarea{width:100%;padding:9px 12px;border-radius:2px;border:1px solid rgba(184,146,63,0.2);background:rgba(255,255,255,0.04);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:all .3s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.28)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(184,146,63,0.06)}
+.fg select option{background:var(--obsidian)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-submit{width:100%;padding:14px;border-radius:2px;border:1px solid var(--gold);background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--obsidian);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all .3s;margin-top:4px;letter-spacing:1.5px;text-transform:uppercase}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(184,146,63,0.4)}
+.form-note{text-align:center;font-size:10px;color:rgba(255,255,255,0.3);margin-top:8px;font-style:italic}
+.footer{padding:28px 40px;background:var(--obsidian);color:rgba(255,255,255,0.4);text-align:center;font-size:11px;border-top:1px solid rgba(184,146,63,0.15)}
+.footer a{color:var(--gold);text-decoration:none}
+.footer-contact{margin-bottom:6px;font-size:13px;color:var(--gold-pale);opacity:.8}
+.footer-contact strong{color:#fff}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.reveal{opacity:0;transform:translateY(25px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.hero{grid-template-columns:1fr;padding:88px 24px 36px}.problem-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:repeat(3,1fr)}.services-grid{grid-template-columns:1fr 1fr}.proof-grid{grid-template-columns:repeat(3,1fr)}.cta-inner{grid-template-columns:1fr}.showcase-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.hero{padding:78px 16px 28px}.problem-grid,.stats-grid,.services-grid,.process-steps{grid-template-columns:1fr}.proof-grid,.showcase-grid{grid-template-columns:1fr 1fr}.step::after{display:none}.ticker{gap:12px;font-size:10px}.founder .inner{flex-direction:column;text-align:center}.founder-creds{justify-content:center}.fr{grid-template-columns:1fr}.hero-cta-group{flex-direction:column}.hero-img-row{grid-template-columns:1fr}.hero-stats-bar{grid-template-columns:1fr 1fr}.btn-primary,.btn-secondary{width:100%;text-align:center;justify-content:center}.problem,.stats,.services,.proof,.process,.cta-section,.founder,.footer,.showcase{padding-left:16px;padding-right:16px}.problem::before,.services::before{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-logo">INSPIRE <span>INTERIO</span></div><button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Private Consultation</button></nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">Jewellery Showroom Specialists — Bengaluru</div>
+    <h1>Your Jewellery Is Worth Lakhs. <em>Your Showroom Should Say So.</em></h1>
+    <div class="hero-sub">Design for trust. Engineer for the close.</div>
+    <p>A customer walking into a jewellery showroom is about to spend ₹50,000 — sometimes ₹50 lakhs. They won't do it in a space that doesn't feel safe, private, or worthy of the piece. Lighting that makes diamonds smaller than the certificate. Counters that feel like barriers. We design jewellery showrooms that close the high-ticket sale before the salesperson even speaks.</p>
+    <div class="hero-cta-group">
+      <a href="#booking" class="btn-primary">Schedule Private Consultation</a>
+      <a href="#stats" class="btn-secondary">The Business Case</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-row">
+      <div class="hero-img"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=700&q=80" alt="Luxury jewelry showcase"><div class="hero-img-label">Diamond Display</div></div>
+      <div class="hero-img"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=700&q=80" alt="Gold jewelry"><div class="hero-img-label">Gold Heritage Zone</div></div>
+    </div>
+    <div class="hero-img-row">
+      <div class="hero-img tall"><img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1200&q=80" alt="Premium jewellery showroom"><div class="hero-img-label">Flagship Showroom — Bangalore</div></div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="hero-stat"><div class="n">40+</div><div class="l">Retail Projects</div></div>
+      <div class="hero-stat"><div class="n">2L+</div><div class="l">Sq Ft Done</div></div>
+      <div class="hero-stat"><div class="n">13+</div><div class="l">Years Exp</div></div>
+      <div class="hero-stat"><div class="n">100+</div><div class="l">Vendors</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><span><b>250+</b> Residential Projects</span><span><b>40+</b> Luxury Retail & Commercial</span><span><b>₹56Cr</b> Portfolio Managed</span><span><b>Security + Aesthetics</b></span><span><b>IIM Mumbai</b> Certified</span></div>
+
+<section class="problem"><div class="inner">
+  <div class="section-label reveal">The Invisible Tax on Luxury Retail</div>
+  <h2 class="reveal">Every square foot in a jewellery showroom does two jobs — sells trust, and sells desire. Most showrooms fail at both.</h2>
+  <div class="problem-grid">
+    <div class="problem-card reveal"><div class="problem-icon">💎</div><h3>Wrong Light, Dead Diamonds</h3><p>Incorrect colour temperature makes yellow gold look brassy, white gold cold, diamonds smaller than their certificate. You lose ₹5L+ deals you never realize you had.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">🔐</div><h3>Fortress or Friendly</h3><p>Visible bulky security, hostile counters, bank-like barriers make customers feel interrogated. First-time buyers leave before the consultation even begins.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">🔊</div><h3>No Acoustic Privacy</h3><p>₹10L purchases need quiet conversations. When every customer overhears the negotiation, high-ticket closes collapse. Silence is the most underused design asset.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">🧑‍💼</div><h3>No Consultation Zones</h3><p>Wedding shoppers need private, seated, unhurried consultation. Counter-only layouts push them to competitors with proper VIP rooms and family seating.</p></div>
+  </div>
+</div></section>
+
+<section class="stats" id="stats"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--burgundy)">Research & Market Benchmarks</div>
+  <h2 class="reveal">The Numbers Behind Jewellery Showroom Design</h2>
+  <p class="stats-sub reveal">Retail behaviour studies, luxury consumer psychology research, and Indian jewellery retail performance data.</p>
+  <div class="stats-grid">
+    <div class="stat-card reveal"><div class="big">40<span class="a">%</span></div><div class="desc">Higher perceived product value when jewellery is displayed under correct CRI-95+ lighting</div><div class="src">Retail Lighting Research</div></div>
+    <div class="stat-card reveal"><div class="big">2-3<span class="a">×</span></div><div class="desc">Longer dwell time in showrooms with proper seating, acoustic privacy, and zoning</div><div class="src">Luxury Retail Benchmark</div></div>
+    <div class="stat-card reveal"><div class="big">8<span class="a">sec</span></div><div class="desc">Time a first-time buyer takes to judge whether your brand matches the jewellery inside</div><div class="src">Consumer Psychology Studies</div></div>
+    <div class="stat-card reveal"><div class="big">25-35<span class="a">%</span></div><div class="desc">Average ticket-size uplift post redesign of premium jewellery showrooms</div><div class="src">Indian Luxury Retail Data</div></div>
+    <div class="stat-card reveal"><div class="big">₹50L+</div><div class="desc">Single-transaction values that only close in rooms engineered for trust & privacy</div><div class="src">Jaipur / Surat / Mumbai showroom data</div></div>
+  </div>
+</div></section>
+
+<section class="showcase"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--burgundy)">Retail Design Portfolio</div>
+  <h2 class="reveal">Where Gold Becomes Legacy</h2>
+  <p class="showcase-sub reveal">Display architecture, lighting precision, and consultation zones engineered for high-ticket closes.</p>
+  <div class="showcase-grid">
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" alt="Diamond display"><div class="overlay"><h4>Diamond Gallery</h4><span>CRI-95+ · Focused Spots</span></div></div>
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&q=80" alt="Gold showroom"><div class="overlay"><h4>Gold Heritage Wing</h4><span>Traditional · Opulent</span></div></div>
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=600&q=80" alt="VIP consultation room"><div class="overlay"><h4>Private Consultation</h4><span>Wedding & HNI Buyers</span></div></div>
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1514302240736-b1fee5985889?w=600&q=80" alt="Showroom interior"><div class="overlay"><h4>Reception & Brand Zone</h4><span>First-Impression Design</span></div></div>
+  </div>
+</div></section>
+
+<section class="services"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--burgundy)">Jewellery Showroom-Specific Services</div>
+  <h2 class="reveal">Designed for Jewellery. Engineered for the Close.</h2>
+  <div class="services-grid">
+    <div class="svc reveal"><div class="svc-icon">💡</div><h3>Precision Lighting Design</h3><p>CRI-95+ LED spotlighting, correct colour temperature per metal (yellow gold 3000K, white gold 4000K, diamonds 5000K+). Gemstones sparkle at their true grade.</p><span class="svc-tag" style="background:rgba(184,146,63,0.12);color:var(--gold)">Lighting Science</span></div>
+    <div class="svc reveal"><div class="svc-icon">🔒</div><h3>Invisible Security Integration</h3><p>Hidden CCTV, concealed panic buttons, discreet vault access, anti-tarnish display cases. Full security without fortress aesthetics — customer feels welcome, not watched.</p><span class="svc-tag" style="background:rgba(92,31,31,0.12);color:var(--burgundy)">Discreet Protection</span></div>
+    <div class="svc reveal"><div class="svc-icon">🪑</div><h3>VIP Consultation Rooms</h3><p>Private, acoustically isolated rooms for wedding shopping, HNI clients, NRI buyers. Comfortable seating, tea service, mirrors at proper angles — where ₹10L+ closes.</p><span class="svc-tag" style="background:rgba(26,22,18,0.1);color:var(--obsidian)">High-Ticket Zone</span></div>
+    <div class="svc reveal"><div class="svc-icon">🎨</div><h3>Zoning & Customer Flow</h3><p>Casual browse near entry, mid-range mid-showroom, high-value toward back with privacy. Curved counters replace straight barriers. Customers explore freely, staff maintain sightlines.</p><span class="svc-tag" style="background:rgba(184,146,63,0.12);color:var(--gold)">Flow Architecture</span></div>
+    <div class="svc reveal"><div class="svc-icon">🏛️</div><h3>Brand Identity Integration</h3><p>Your signature motifs, brand colours, family heritage story woven into materials, signage, display frames. Every touch reinforces "this is THE jewellery family in this city."</p><span class="svc-tag" style="background:rgba(139,111,71,0.15);color:var(--bronze)">Brand Storytelling</span></div>
+    <div class="svc reveal"><div class="svc-icon">🔄</div><h3>Multi-Showroom Rollout</h3><p>Standardized design language across flagship + branch outlets. Same premium feel from Jayanagar flagship to Whitefield branch. 100+ vendor network ensures consistency.</p><span class="svc-tag" style="background:rgba(184,146,63,0.12);color:var(--gold)">Scalable Luxury</span></div>
+  </div>
+</div></section>
+
+<section class="proof"><div class="proof-bg"></div>
+  <div class="inner">
+    <div class="section-label reveal">Execution Track Record</div>
+    <h2 class="reveal">Built on Delivery, Not Promises</h2>
+    <p class="proof-sub reveal">13+ years executing luxury retail, corporate interiors, and premium commercial fit-outs. Former execution leader at HomeLane, Design Cafe, Bonito Designs & Flipspaces.</p>
+    <div class="proof-grid">
+      <div class="proof-item reveal"><div class="num">250+</div><div class="lbl">Residential Projects</div></div>
+      <div class="proof-item reveal"><div class="num">40+</div><div class="lbl">Luxury Retail & Commercial</div></div>
+      <div class="proof-item reveal"><div class="num">2L+</div><div class="lbl">Sq Ft Executed</div></div>
+      <div class="proof-item reveal"><div class="num">₹56Cr</div><div class="lbl">Portfolio Managed</div></div>
+      <div class="proof-item reveal"><div class="num">100+</div><div class="lbl">Vendor Network</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="process"><div class="inner">
+  <div class="section-label reveal" style="color:var(--burgundy)">How It Works</div>
+  <h2 class="reveal">From Consultation to Grand Opening — 4 Steps</h2>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">I</div><h3>Private Consultation</h3><p>On-site or virtual — we assess your current showroom, brand positioning, competitor landscape. Complimentary.</p></div>
+    <div class="step reveal"><div class="step-num">II</div><h3>3D Design Walkthrough</h3><p>Photorealistic renders of every zone — display, consultation, vault, entrance — before any execution.</p></div>
+    <div class="step reveal"><div class="step-num">III</div><h3>Phased Execution</h3><p>Turnkey fit-out with minimum downtime. Security vendor coordination, lighting calibration, finish-level quality audit.</p></div>
+    <div class="step reveal"><div class="step-num">IV</div><h3>Opening & Continued Support</h3><p>Muhurat day ready. Post-opening adjustments, lighting fine-tuning, continued vendor support.</p></div>
+  </div>
+</div></section>
+
+<section class="founder"><div class="founder-bg"></div>
+  <div class="inner reveal">
+    <div class="founder-avatar">AS</div>
+    <div class="founder-info">
+      <h3>Anand Selvarajan</h3>
+      <div class="founder-title">FOUNDER & CEO · INSPIRE INTERIO, BENGALURU</div>
+      <p>13+ years executing interiors across Dubai and India — including corporate bank interiors in the UAE where security, precision lighting, and luxury finish were non-negotiable. Former execution leader at HomeLane, Design Cafe, Bonito Designs & Flipspaces. Managed ₹7Cr+ procurement, 350+ product categories with specialty vendors in glass, brass, precision lighting, and bespoke joinery. IIM Mumbai — Supply Chain Analytics. BNI India & RISE Global member.</p>
+      <div class="founder-creds"><span class="founder-cred">Dubai Banks</span><span class="founder-cred">IIM Mumbai</span><span class="founder-cred">Luxury Retail</span><span class="founder-cred">BNI Member</span><span class="founder-cred">RISE Global</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="booking"><div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="section-label">Before the Wedding Season Begins</div>
+      <h2>Your Customers Are Buying a <em>Lifetime Heirloom</em></h2>
+      <p>They deserve a showroom that matches the piece. A room where lakhs feel natural to spend. A space where the jewellery is the only star — because every other design element has quietly done its job.</p>
+      <div class="cta-urgency">Wedding & festive season approaching — book audit before May</div>
+      <ul class="cta-benefits">
+        <li>Complimentary on-site showroom audit & benchmark report</li>
+        <li>3D renders of every zone before board/partner approval</li>
+        <li>Phased execution with minimal business disruption</li>
+        <li>CRI-95+ lighting specification & calibration included</li>
+        <li>Discreet security integration — vendors pre-approved</li>
+        <li>Signed NDA — competitor-sensitive design stays confidential</li>
+      </ul>
+    </div>
+    <div class="cta-form">
+      <h3>Request Private Consultation</h3>
+      <div class="fg"><label>Your Name & Role</label><input type="text" placeholder="Owner / Partner / MD"></div>
+      <div class="fr"><div class="fg"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div><div class="fg"><label>Email</label><input type="email" placeholder="you@jeweller.com"></div></div>
+      <div class="fg"><label>Brand Name</label><input type="text" placeholder="e.g. Kalyan Jewellers"></div>
+      <div class="fg"><label>Showroom Segment</label><select><option value="">Select your positioning</option><option>Heritage / Traditional Gold</option><option>Premium Diamond & Bridal</option><option>Contemporary / Design-led</option><option>Multi-brand Retail</option><option>Mall-based Boutique</option><option>Flagship / Destination Store</option><option>Franchise / Multi-outlet Brand</option></select></div>
+      <div class="fr"><div class="fg"><label>Showroom Area</label><select><option value="">Approx. size</option><option>Under 800 sq ft</option><option>800 – 2,000 sq ft</option><option>2,000 – 5,000 sq ft</option><option>5,000 – 10,000 sq ft</option><option>10,000+ sq ft / Flagship</option></select></div><div class="fg"><label>Project Type</label><select><option value="">Select</option><option>New Showroom Launch</option><option>Full Renovation</option><option>Zone Refresh (Display / VIP)</option><option>Multi-Outlet Rollout</option></select></div></div>
+      <div class="fg"><label>Anything specific?</label><textarea rows="2" placeholder="Timeline, budget range, security requirements..."></textarea></div>
+      <button class="form-submit" onclick="handleSubmit()">Request Private Consultation</button>
+      <div class="form-note">All enquiries confidential. NDA provided on request.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-contact"><strong>INSPIRE INTERIO</strong> &nbsp;|&nbsp; +91 75388 47073 &nbsp;|&nbsp; info@inspireinterio.com</div>
+  <div>1st Floor, No 5, 11th A Cross, Brindavan Layout, Horamavu, Bengaluru 560043</div>
+  <div style="margin-top:6px"><a href="https://inspireinterio.com" target="_blank">inspireinterio.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/anand-selvarajan-195a3646/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; <a href="https://www.instagram.com/inspire.interio" target="_blank">Instagram</a></div>
+  <div style="margin-top:8px;font-size:9px;letter-spacing:1px">© 2026 INSPIRE INTERIO · DREAM UNLIMITED</div>
+</footer>
+
+<script>
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('visible')},{threshold:.1,rootMargin:'0px 0px -30px 0px'}).observe(el)});
+function handleSubmit(){const b=document.querySelector('.form-submit');b.textContent='✓ Request Received';b.style.background='var(--bronze)';b.style.color='#fff';b.disabled=true;setTimeout(()=>{b.textContent='Request Private Consultation';b.style.background='';b.style.color='';b.disabled=false},4000)}
+</script>
+</body>
+</html>

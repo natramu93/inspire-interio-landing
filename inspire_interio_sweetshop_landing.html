@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspire Interio — Sweet Shop Interiors That Drive Footfall & Premium Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FDF9F2;
+  --cream:#F6EAD5;
+  --warm-white:#FFFDF8;
+  --charcoal:#1F1812;
+  --maroon:#7A2E2B;
+  --maroon-deep:#5A1F1D;
+  --saffron:#E8883B;
+  --saffron-light:#F4A85C;
+  --gold:#C49A3C;
+  --gold-light:#E0BC5F;
+  --pista:#A6B56B;
+  --rose:#C87676;
+  --text-primary:#1F1812;
+  --text-secondary:#5A4A3A;
+  --text-muted:#8A7A68;
+  --red:#8B2020;
+  --border:rgba(31,24,18,0.08)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(253,249,242,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--maroon)}
+.nav-logo span{color:var(--saffron)}
+.nav-cta{background:var(--maroon);color:#fff;padding:9px 20px;border-radius:6px;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s}
+.nav-cta:hover{background:var(--maroon-deep)}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;padding:96px 40px 0;max-width:1200px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(122,46,43,0.08);border:1px solid rgba(122,46,43,0.18);font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--maroon);margin-bottom:14px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--saffron);animation:pulse 2s infinite}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,48px);font-weight:700;line-height:1.12;color:var(--charcoal);margin-bottom:6px}
+.hero h1 em{font-style:italic;color:var(--maroon);position:relative}
+.hero h1 em::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:6px;background:rgba(232,136,59,0.3);transform:skewX(-6deg)}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(16px,1.8vw,22px);color:var(--saffron);font-style:italic;margin-bottom:14px}
+.hero p{font-size:14px;line-height:1.6;color:var(--text-secondary);margin-bottom:20px}
+.hero-cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--maroon);color:#fff;padding:12px 26px;border-radius:6px;border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--maroon-deep);transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,46,43,0.25)}
+.btn-secondary{background:transparent;color:var(--maroon);padding:12px 26px;border-radius:6px;border:1.5px solid rgba(122,46,43,0.3);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none}
+.btn-secondary:hover{border-color:var(--maroon);background:rgba(122,46,43,0.04)}
+.hero-right{display:flex;flex-direction:column;gap:12px}
+.hero-img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-img{border-radius:12px;overflow:hidden;position:relative;height:160px;box-shadow:0 8px 24px rgba(122,46,43,0.1)}
+.hero-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-img:hover img{transform:scale(1.05)}
+.hero-img-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(0,0,0,0.75));color:#fff;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.hero-img.tall{grid-column:1/3;height:140px}
+.hero-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hero-stat{background:#fff;border-radius:10px;padding:12px 8px;text-align:center;border:1px solid var(--border)}
+.hero-stat .n{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--maroon)}
+.hero-stat .l{font-size:8px;color:var(--text-muted);letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+.ticker{background:var(--maroon);color:rgba(255,255,255,0.9);padding:12px 32px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:12px;font-weight:500}
+.ticker b{color:var(--saffron)}
+.problem{padding:56px 40px;background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
+.problem::before{content:'';position:absolute;top:0;right:0;bottom:0;width:40%;background:url('https://images.unsplash.com/photo-1618827580321-32e18a14ab39?w=800&q=80') center/cover no-repeat;opacity:.1}
+.problem .inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.section-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--saffron);margin-bottom:10px}
+.problem h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:700;line-height:1.25;margin-bottom:28px;max-width:680px}
+.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.problem-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:22px;transition:all .3s;backdrop-filter:blur(4px)}
+.problem-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(232,136,59,0.35);transform:translateY(-3px)}
+.problem-icon{font-size:22px;margin-bottom:10px}
+.problem-card h3{font-size:14px;font-weight:600;margin-bottom:6px}
+.problem-card p{font-size:12px;color:rgba(255,255,255,0.6);line-height:1.5}
+.stats{padding:56px 40px;background:linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%)}
+.stats .inner{max-width:1200px;margin:0 auto}
+.stats h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);text-align:center;margin-bottom:6px}
+.stats-sub{text-align:center;font-size:13px;color:var(--text-secondary);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.5}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.stat-card{background:#fff;border-radius:12px;padding:24px 14px;text-align:center;border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--maroon),var(--saffron));transform:scaleX(0);transition:transform .3s}
+.stat-card:hover::before{transform:scaleX(1)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(122,46,43,0.08)}
+.stat-card .big{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--maroon);line-height:1}
+.stat-card .big .a{color:var(--saffron)}
+.stat-card .desc{font-size:11px;color:var(--text-secondary);margin-top:6px;line-height:1.4}
+.stat-card .src{font-size:9px;color:var(--text-muted);margin-top:6px;font-style:italic}
+.showcase{padding:48px 40px;background:var(--ivory)}
+.showcase .inner{max-width:1200px;margin:0 auto}
+.showcase h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,30px);text-align:center;margin-bottom:8px}
+.showcase-sub{text-align:center;font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.showcase-item{border-radius:12px;overflow:hidden;position:relative;height:200px;cursor:pointer;box-shadow:0 6px 20px rgba(122,46,43,0.08)}
+.showcase-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.showcase-item:hover img{transform:scale(1.08)}
+.showcase-item .overlay{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:#fff}
+.showcase-item .overlay h4{font-family:'Playfair Display',serif;font-size:14px;margin-bottom:2px}
+.showcase-item .overlay span{font-size:10px;opacity:.8;letter-spacing:.3px}
+.services{padding:56px 40px;background:var(--warm-white);position:relative;overflow:hidden}
+.services::before{content:'';position:absolute;top:0;left:0;bottom:0;width:35%;background:url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80') center/cover no-repeat;opacity:.05}
+.services .inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.services h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);text-align:center;margin-bottom:32px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:rgba(255,255,255,0.95);border-radius:12px;padding:24px;border:1px solid var(--border);transition:all .3s;backdrop-filter:blur(8px)}
+.svc:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(122,46,43,0.08);border-color:rgba(122,46,43,0.2)}
+.svc-icon{font-size:22px;margin-bottom:10px}
+.svc h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:6px}
+.svc p{font-size:12px;color:var(--text-secondary);line-height:1.5}
+.svc-tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:100px;font-size:9px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+.proof{padding:52px 40px;position:relative;overflow:hidden;color:#fff}
+.proof-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1610021687013-8b7d3c30c37a?w=1400&q=80') center/cover no-repeat}
+.proof-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(122,46,43,0.94),rgba(90,31,29,0.9))}
+.proof .inner{max-width:1000px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.proof h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:6px}
+.proof-sub{font-size:13px;color:rgba(255,255,255,0.65);margin-bottom:28px}
+.proof-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.proof-item{padding:20px 10px;border:1px solid rgba(255,255,255,0.18);border-radius:10px;background:rgba(255,255,255,0.06);transition:all .3s;backdrop-filter:blur(4px)}
+.proof-item:hover{background:rgba(255,255,255,0.12);border-color:rgba(232,136,59,0.5)}
+.proof-item .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--saffron)}
+.proof-item .lbl{font-size:10px;color:rgba(255,255,255,0.72);margin-top:4px;line-height:1.3}
+.process{padding:56px 40px;background:var(--ivory)}
+.process .inner{max-width:1000px;margin:0 auto;text-align:center}
+.process h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:32px}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:16px;position:relative}
+.step::after{content:'→';position:absolute;right:-6px;top:36px;font-size:16px;color:var(--saffron)}
+.step:last-child::after{display:none}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--maroon);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin:0 auto 10px}
+.step h3{font-size:13px;font-weight:600;margin-bottom:4px}
+.step p{font-size:11px;color:var(--text-muted);line-height:1.4}
+.founder{padding:40px;position:relative;overflow:hidden}
+.founder-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1621236378699-8597faf6a11a?w=1400&q=80') center/cover no-repeat}
+.founder-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(246,234,213,0.96),rgba(246,234,213,0.92))}
+.founder .inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:24px;position:relative;z-index:1}
+.founder-avatar{width:80px;height:80px;border-radius:50%;background:var(--maroon);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:#fff;font-weight:700;border:2px solid var(--saffron);flex-shrink:0}
+.founder-info h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:2px}
+.founder-title{font-size:12px;color:var(--saffron);font-weight:600;margin-bottom:8px}
+.founder-info p{font-size:12px;color:var(--text-secondary);line-height:1.55}
+.founder-creds{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.founder-cred{padding:3px 10px;border-radius:100px;background:rgba(122,46,43,0.1);font-size:9px;font-weight:600;color:var(--maroon)}
+.cta-section{padding:56px 40px;position:relative;overflow:hidden;color:#fff}
+.cta-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1613746203812-717e6e5db456?w=1400&q=80') center/cover no-repeat}
+.cta-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(31,24,18,0.95),rgba(60,36,28,0.92))}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;position:relative;z-index:1}
+.cta-text h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:12px;line-height:1.2}
+.cta-text h2 em{color:var(--saffron);font-style:italic}
+.cta-text p{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.55;margin-bottom:16px}
+.cta-urgency{display:inline-flex;align-items:center;gap:6px;background:rgba(232,136,59,0.15);border:1px solid rgba(232,136,59,0.3);padding:7px 12px;border-radius:6px;font-size:11px;font-weight:600;color:var(--saffron-light)}
+.cta-urgency::before{content:'🎉'}
+.cta-benefits{margin-top:20px}
+.cta-benefits li{list-style:none;font-size:12px;color:rgba(255,255,255,0.7);margin-bottom:8px;padding-left:18px;position:relative;line-height:1.45}
+.cta-benefits li::before{content:'✓';position:absolute;left:0;color:var(--saffron);font-weight:700}
+.cta-form{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:28px;backdrop-filter:blur(12px)}
+.cta-form h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:16px;text-align:center}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:9px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:3px}
+.fg input,.fg select,.fg textarea{width:100%;padding:9px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.05);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:all .3s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.28)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--saffron);background:rgba(255,255,255,0.08)}
+.fg select option{background:var(--charcoal)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-submit{width:100%;padding:13px;border-radius:6px;border:none;background:linear-gradient(135deg,var(--saffron),var(--saffron-light));color:var(--charcoal);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;margin-top:4px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,136,59,0.35)}
+.form-note{text-align:center;font-size:10px;color:rgba(255,255,255,0.3);margin-top:6px}
+.footer{padding:28px 40px;background:var(--charcoal);color:rgba(255,255,255,0.42);text-align:center;font-size:11px;border-top:1px solid rgba(255,255,255,0.06)}
+.footer a{color:var(--saffron);text-decoration:none}
+.footer-contact{margin-bottom:6px;font-size:13px;color:rgba(255,255,255,0.72)}
+.footer-contact strong{color:#fff}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.reveal{opacity:0;transform:translateY(25px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.hero{grid-template-columns:1fr;padding:88px 24px 36px}.problem-grid{grid-template-columns:1fr 1fr}.stats-grid{grid-template-columns:repeat(3,1fr)}.services-grid{grid-template-columns:1fr 1fr}.proof-grid{grid-template-columns:repeat(3,1fr)}.cta-inner{grid-template-columns:1fr}.showcase-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.hero{padding:78px 16px 28px}.problem-grid,.stats-grid,.services-grid,.process-steps{grid-template-columns:1fr}.proof-grid,.showcase-grid{grid-template-columns:1fr 1fr}.step::after{display:none}.ticker{gap:12px;font-size:10px}.founder .inner{flex-direction:column;text-align:center}.founder-creds{justify-content:center}.fr{grid-template-columns:1fr}.hero-cta-group{flex-direction:column}.hero-img-row{grid-template-columns:1fr}.hero-stats-bar{grid-template-columns:1fr 1fr}.btn-primary,.btn-secondary{width:100%;text-align:center;justify-content:center}.problem,.stats,.services,.proof,.process,.cta-section,.founder,.footer,.showcase{padding-left:16px;padding-right:16px}.problem::before,.services::before{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-logo">Inspire <span>Interio</span></div><button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Store Walkthrough</button></nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">Sweet Shop & Mithai Specialists — Bengaluru</div>
+    <h1>Your Mithai Deserves a <em>Stage, Not a Shelf</em></h1>
+    <div class="hero-sub">Design the premium experience. Charge premium prices.</div>
+    <p>India Sweet House went from zero to ₹80.5Cr in 4 years by reimagining the traditional mithai shop — premium-mass positioning with curated in-store experiences. Every day your outdated shop stays the same, a modern competitor takes another slice. We transform legacy sweet shops into footfall-magnets that justify 30-60% price premiums.</p>
+    <div class="hero-cta-group">
+      <a href="#booking" class="btn-primary">Schedule Free Store Audit →</a>
+      <a href="#stats" class="btn-secondary">See The Market Data</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-row">
+      <div class="hero-img"><img src="https://images.unsplash.com/photo-1605197584247-aa3dc1a0b4d5?w=700&q=80" alt="Premium sweet display"><div class="hero-img-label">Premium Display</div></div>
+      <div class="hero-img"><img src="https://images.unsplash.com/photo-1606050627722-3646950d0ba6?w=700&q=80" alt="Mithai counter"><div class="hero-img-label">Modern Mithai Counter</div></div>
+    </div>
+    <div class="hero-img-row">
+      <div class="hero-img tall"><img src="https://images.unsplash.com/photo-1613746203812-717e6e5db456?w=1200&q=80" alt="Premium sweet shop interior"><div class="hero-img-label">Full Store Transformation — Bangalore</div></div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="hero-stat"><div class="n">40+</div><div class="l">Retail Projects</div></div>
+      <div class="hero-stat"><div class="n">2L+</div><div class="l">Sq Ft Done</div></div>
+      <div class="hero-stat"><div class="n">13+</div><div class="l">Years Exp</div></div>
+      <div class="hero-stat"><div class="n">100+</div><div class="l">Vendors</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker"><span><b>250+</b> Residential Projects</span><span><b>40+</b> Retail & Commercial</span><span><b>₹56Cr</b> Portfolio Managed</span><span><b>Sweet Shop</b> Specialists</span><span><b>IIM Mumbai</b> Certified</span></div>
+
+<section class="problem"><div class="inner">
+  <div class="section-label reveal">The ₹25,970 Cr Blind Spot</div>
+  <h2 class="reveal">India's mithai market is exploding — but 70% of legacy sweet shops still look like 1985.</h2>
+  <div class="problem-grid">
+    <div class="problem-card reveal"><div class="problem-icon">👀</div><h3>You Look Like Commodity</h3><p>Cluttered counters, yellow tubelights, steel trays — customers see the same shop as every other halwai. They can't charge more because you don't look different.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">📉</div><h3>Price War Trap</h3><p>When customers can't tell you apart visually, they compare only on price. You fight ₹10 battles while premium competitors charge ₹1,600/kg for kaju katli without a blink.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">🎁</div><h3>Zero Festival Upside</h3><p>Diwali, Rakhi, weddings — corporate gifting clients need photo-worthy packaging & store experiences. Outdated shops get zero bulk-gifting contracts.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">👥</div><h3>Young Bangalore Bypasses You</h3><p>Tech crowd, NRI gifting, Instagram-first consumers — they choose India Sweet House, Bombay Sweet Shop, Anand Sweets. Your generational brand loses the next generation silently.</p></div>
+  </div>
+</div></section>
+
+<section class="stats" id="stats"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--maroon)">Market-Backed Impact</div>
+  <h2 class="reveal">The Numbers Behind Mithai Retail Design</h2>
+  <p class="stats-sub reveal">Indian sweet retail market data, premium-mass brand performance benchmarks, and published retail ambience research.</p>
+  <div class="stats-grid">
+    <div class="stat-card reveal"><div class="big">₹25,970<span class="a">Cr</span></div><div class="desc">Projected Indian mithai market size by 2030 — premium segment growing fastest</div><div class="src">Industry Outlook 2030</div></div>
+    <div class="stat-card reveal"><div class="big">100<span class="a">%</span></div><div class="desc">Annual revenue growth achieved by new-age sweet brands with designed store formats (India Sweet House)</div><div class="src">SMBStory / YourStory</div></div>
+    <div class="stat-card reveal"><div class="big">50,000</div><div class="desc">Footfalls in 3 days at a Tier-II ISH outlet — proof that design pulls traffic</div><div class="src">ISH Chitradurga launch</div></div>
+    <div class="stat-card reveal"><div class="big">₹1,600</div><div class="desc">Per-kg price premium that designed stores command vs. ₹400 legacy stores for same barfi</div><div class="src">Bangalore premium segment benchmark</div></div>
+    <div class="stat-card reveal"><div class="big">30-60<span class="a">%</span></div><div class="desc">Average ticket-size uplift after professional store redesign + lighting upgrade</div><div class="src">Retail Ambience Research</div></div>
+  </div>
+</div></section>
+
+<section class="showcase"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--maroon)">Retail Design Portfolio</div>
+  <h2 class="reveal">Where Tradition Meets Temptation</h2>
+  <p class="showcase-sub reveal">Display architecture, lighting, and flow engineered to make every mithai look like a jewel.</p>
+  <div class="showcase-grid">
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1605197584247-aa3dc1a0b4d5?w=600&q=80" alt="Sweet display"><div class="overlay"><h4>Premium Sweet Counter</h4><span>Glass · Brass · Warm Light</span></div></div>
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1606050627722-3646950d0ba6?w=600&q=80" alt="Mithai showcase"><div class="overlay"><h4>Festival Counter</h4><span>Rakhi · Diwali · Weddings</span></div></div>
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Cafe seating"><div class="overlay"><h4>Café Seating Zone</h4><span>Dwell Time = More Revenue</span></div></div>
+    <div class="showcase-item reveal"><img src="https://images.unsplash.com/photo-1618827580321-32e18a14ab39?w=600&q=80" alt="Gift packaging"><div class="overlay"><h4>Gift Packaging Wall</h4><span>Corporate & Bulk Orders</span></div></div>
+  </div>
+</div></section>
+
+<section class="services"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--maroon)">Sweet Shop-Specific Services</div>
+  <h2 class="reveal">Designed for Mithai. Engineered for Margin.</h2>
+  <div class="services-grid">
+    <div class="svc reveal"><div class="svc-icon">🍬</div><h3>Display Counter Design</h3><p>Custom glass showcases, warm LED strip lighting, tray elevation systems, category zoning (dry fruits, milk-based, festival) — make every sweet look worth 2x.</p><span class="svc-tag" style="background:rgba(122,46,43,0.08);color:var(--maroon)">Product-First</span></div>
+    <div class="svc reveal"><div class="svc-icon">🎁</div><h3>Festival & Gifting Zones</h3><p>Dedicated dry-fruit boxes display, corporate gift hampers wall, Rakhi/Diwali seasonal installations. Capture 40% of revenue that spikes in festival windows.</p><span class="svc-tag" style="background:rgba(232,136,59,0.12);color:var(--saffron)">Peak Season Ready</span></div>
+    <div class="svc reveal"><div class="svc-icon">☕</div><h3>Café & Seating Integration</h3><p>Add chaat/sweet tasting corner with seating. Average dwell time doubles, footfall becomes dine-in, Instagram tags multiply — the India Sweet House playbook.</p><span class="svc-tag" style="background:rgba(196,154,60,0.12);color:var(--gold)">Footfall Multiplier</span></div>
+    <div class="svc reveal"><div class="svc-icon">💡</div><h3>Lighting & Ambience Engineering</h3><p>Warm 2700K LEDs for milk sweets, cool highlights for dry fruits, spotlit hero products. Lighting alone can lift perceived product value by 40%.</p><span class="svc-tag" style="background:rgba(200,118,118,0.15);color:var(--rose)">Science of Craving</span></div>
+    <div class="svc reveal"><div class="svc-icon">🧑‍🍳</div><h3>Open Kitchen / Live Counter</h3><p>Glass-walled jalebi, halwa, dosa stations. Visible craftsmanship + aroma = trust + impulse purchase. Conversion rates climb 20-35% with live cooking theater.</p><span class="svc-tag" style="background:rgba(122,46,43,0.08);color:var(--maroon)">Trust Engine</span></div>
+    <div class="svc reveal"><div class="svc-icon">🔄</div><h3>Multi-Outlet Rollout</h3><p>Standardized design kit across 2-50 stores. Same brand feel from flagship to Tier-II outlet. 100+ vendor network for consistent materials & faster rollout.</p><span class="svc-tag" style="background:rgba(232,136,59,0.12);color:var(--saffron)">Scale Ready</span></div>
+  </div>
+</div></section>
+
+<section class="proof"><div class="proof-bg"></div>
+  <div class="inner">
+    <div class="section-label reveal">Execution Track Record</div>
+    <h2 class="reveal">Built on Delivery, Not Promises</h2>
+    <p class="proof-sub reveal">13+ years across Dubai and India. Retail fit-outs, sweet shop renovations, and multi-outlet brand rollouts — executed end-to-end.</p>
+    <div class="proof-grid">
+      <div class="proof-item reveal"><div class="num">250+</div><div class="lbl">Residential Projects</div></div>
+      <div class="proof-item reveal"><div class="num">40+</div><div class="lbl">Retail & Commercial</div></div>
+      <div class="proof-item reveal"><div class="num">2L+</div><div class="lbl">Sq Ft Executed</div></div>
+      <div class="proof-item reveal"><div class="num">₹56Cr</div><div class="lbl">Portfolio Managed</div></div>
+      <div class="proof-item reveal"><div class="num">100+</div><div class="lbl">Vendor Network</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="process"><div class="inner">
+  <div class="section-label reveal" style="color:var(--maroon)">How It Works</div>
+  <h2 class="reveal">Old Shop to Premium Brand — 4 Steps</h2>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">1</div><h3>Free Store Audit</h3><p>We visit your shop, study footfall flow, pricing bracket, & competitor gap — zero cost.</p></div>
+    <div class="step reveal"><div class="step-num">2</div><h3>Brand-Led 3D Design</h3><p>Photorealistic renders showing displays, counters, lighting, seating before any work starts.</p></div>
+    <div class="step reveal"><div class="step-num">3</div><h3>Off-Season Execution</h3><p>Transform between festival peaks. Phased fit-out to minimize revenue loss. Daily updates.</p></div>
+    <div class="step reveal"><div class="step-num">4</div><h3>Grand Reopening</h3><p>Walk into a store that justifies ₹1,600/kg. Support for launch marketing & vendor handoff.</p></div>
+  </div>
+</div></section>
+
+<section class="founder"><div class="founder-bg"></div>
+  <div class="inner reveal">
+    <div class="founder-avatar">AS</div>
+    <div class="founder-info">
+      <h3>Anand Selvarajan</h3>
+      <div class="founder-title">Founder & CEO — Inspire Interio, Bengaluru</div>
+      <p>13+ years executing interiors across Dubai and India. Former execution leader at HomeLane, Design Cafe, Bonito Designs & Flipspaces. Delivered sweet shops, clinics, corporate offices, and specialty retail across Bengaluru. Managed ₹7Cr+ procurement, 350+ product categories. IIM Mumbai — Supply Chain Analytics. BNI India & RISE Global member.</p>
+      <div class="founder-creds"><span class="founder-cred">Dubai + India</span><span class="founder-cred">IIM Mumbai</span><span class="founder-cred">Sweet Shop Veteran</span><span class="founder-cred">BNI Member</span><span class="founder-cred">RISE Global</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="booking"><div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="section-label">Before Festive Season Starts</div>
+      <h2>Your Legacy Brand Deserves a <em>Flagship, Not a Counter</em></h2>
+      <p>Every week you wait, a new-age competitor opens a designed outlet within 2km of yours. Your name has 40 years of trust — your store needs to match it.</p>
+      <div class="cta-urgency">Execute before Diwali — redesign now, reopen with 3x festival revenue</div>
+      <ul class="cta-benefits">
+        <li>Free on-site store audit & footfall analysis</li>
+        <li>3D visualization of every display, counter & zone</li>
+        <li>Off-season phased execution (minimize sales loss)</li>
+        <li>Food-grade, health-compliant material sourcing</li>
+        <li>100+ vendor network = best rates on glass, lighting, custom joinery</li>
+        <li>Multi-outlet rollout kit for franchise expansion</li>
+      </ul>
+    </div>
+    <div class="cta-form">
+      <h3>Book Your Free Store Audit</h3>
+      <div class="fg"><label>Your Name</label><input type="text" placeholder="Owner / Manager / Partner"></div>
+      <div class="fr"><div class="fg"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div><div class="fg"><label>Email</label><input type="email" placeholder="you@shop.com"></div></div>
+      <div class="fg"><label>Shop Name</label><input type="text" placeholder="e.g. Ganesh Sweets"></div>
+      <div class="fg"><label>Shop Type</label><select><option value="">Select your format</option><option>Traditional Mithai Shop</option><option>Modern Sweet Brand (multi-outlet)</option><option>Bakery + Sweets</option><option>Dry Fruit & Gifting Store</option><option>Chaat + Mithai Combo</option><option>New Sweet Shop Launch</option><option>Other Specialty Retail</option></select></div>
+      <div class="fr"><div class="fg"><label>Shop Area</label><select><option value="">Approx. size</option><option>Under 300 sq ft</option><option>300 – 800 sq ft</option><option>800 – 2,000 sq ft</option><option>2,000 – 5,000 sq ft</option><option>5,000+ sq ft / Multi-Outlet</option></select></div><div class="fg"><label>Project Type</label><select><option value="">Select</option><option>New Shop Setup</option><option>Renovation / Refresh</option><option>Expansion / New Branch</option><option>Franchise Rollout</option></select></div></div>
+      <div class="fg"><label>Anything else?</label><textarea rows="2" placeholder="Budget, festive deadline, footfall goals..."></textarea></div>
+      <button class="form-submit" onclick="handleSubmit()">Book My Free Store Audit →</button>
+      <div class="form-note">No spam. No pressure. 30-minute walkthrough with Anand.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-contact"><strong>Inspire Interio</strong> &nbsp;|&nbsp; 📞 +91 75388 47073 &nbsp;|&nbsp; ✉ info@inspireinterio.com</div>
+  <div>1st Floor, No 5, 11th A Cross, Brindavan Layout, Horamavu, Bengaluru 560043</div>
+  <div style="margin-top:6px"><a href="https://inspireinterio.com" target="_blank">inspireinterio.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/anand-selvarajan-195a3646/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; <a href="https://www.instagram.com/inspire.interio" target="_blank">Instagram</a></div>
+  <div style="margin-top:8px;font-size:9px">© 2026 Inspire Interio. Dream Unlimited.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('visible')},{threshold:.1,rootMargin:'0px 0px -30px 0px'}).observe(el)});
+function handleSubmit(){const b=document.querySelector('.form-submit');b.textContent='✓ Sent! We will Call Within 24 Hours';b.style.background='var(--pista)';b.style.color='#fff';b.disabled=true;setTimeout(()=>{b.textContent='Book My Free Store Audit →';b.style.background='';b.style.color='';b.disabled=false},4000)}
+</script>
+</body>
+</html>

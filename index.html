@@ -25,6 +25,14 @@
   --navy-bright:#2563A8;
   --sun:#F4B942;
 
+  /* new verticals */
+  --burgundy:#5C1F1F;
+  --champagne:#C9A84C;
+  --terracotta:#B8624A;
+  --sage:#7B9071;
+  --saffron:#E8883B;
+  --maroon:#7A1C1C;
+
   --grad-mix: linear-gradient(135deg,#1A4A4A 0%,#1E3A5F 50%,#C4963C 100%);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -275,6 +283,9 @@ img{display:block;max-width:100%}
 }
 .card--clinic .card-link{color:var(--teal)}
 .card--school .card-link{color:var(--navy)}
+.card--jewellery .card-link{color:var(--burgundy)}
+.card--residential .card-link{color:var(--terracotta)}
+.card--sweetshop .card-link{color:var(--maroon)}
 .card-link:hover{gap:14px}
 .card-link .arrow{
   display:inline-flex;align-items:center;justify-content:center;
@@ -284,6 +295,19 @@ img{display:block;max-width:100%}
 }
 .card--clinic .card-link:hover .arrow{background:rgba(26,74,74,.1)}
 .card--school .card-link:hover .arrow{background:rgba(30,58,95,.1)}
+.card--jewellery .card-link:hover .arrow{background:rgba(92,31,31,.1)}
+.card--residential .card-link:hover .arrow{background:rgba(184,98,74,.1)}
+.card--sweetshop .card-link:hover .arrow{background:rgba(122,28,28,.1)}
+
+/* h3 em colours for new verticals */
+.card--jewellery h3 em{color:var(--burgundy)}
+.card--residential h3 em{color:var(--terracotta)}
+.card--sweetshop h3 em{color:var(--maroon)}
+
+/* tagline colours for new verticals */
+.card--jewellery .card-tagline{color:var(--champagne)}
+.card--residential .card-tagline{color:var(--sage)}
+.card--sweetshop .card-tagline{color:var(--saffron)}
 .card-stat{font-size:11px;color:var(--muted);text-align:right;line-height:1.4}
 .card-stat b{color:var(--ink);font-weight:700}
 .gallery-card .card-cover-link{
@@ -400,6 +424,9 @@ footer{
   .hero{padding:130px 24px 60px}
   .gallery{padding:0 24px 60px}
   .footer-inner{grid-template-columns:1fr;gap:32px}
+  /* Sweet shop card stacks vertically on smaller screens */
+  .card--sweetshop{flex-direction:column !important;max-height:none !important}
+  .card--sweetshop .preview{flex:none !important;aspect-ratio:16/10 !important}
 }
 @media(max-width:600px){
   .nav-meta .count{display:none}
@@ -424,7 +451,7 @@ footer{
     <span class="name">Inspire <em>Interio</em></span>
   </a>
   <div class="nav-meta">
-    <span class="count"><b>02</b> &nbsp;Verticals Live</span>
+    <span class="count"><b>05</b> &nbsp;Verticals Live</span>
     <a href="mailto:hello@inspireinterio.com" class="nav-cta">Book a Consultation</a>
   </div>
 </nav>
@@ -530,44 +557,149 @@ footer{
 
   </div>
 
-  <!-- Coming Soon vertical cards -->
-  <div class="coming-grid-3">
+  <!-- Live gallery cards — row 2 -->
+  <div class="gallery-grid" style="margin-top:32px">
 
-    <div class="coming-card">
-      <div class="coming-icon">💍</div>
-      <h4>Jewellery Shop Interiors</h4>
-      <p>Luxury showrooms &amp; boutique jewellers — lighting, display and brand ambience that drive desire and dwell time.</p>
-      <div class="pills"><span>Coming soon</span></div>
-    </div>
+    <!-- ── JEWELLERY ──────────────────────────── -->
+    <article class="gallery-card card--jewellery">
+      <a class="card-cover-link" href="inspire_interio_jewellery_landing.html" aria-label="Open Jewellery Showroom Interiors landing page">Open jewellery page</a>
+      <div class="preview">
+        <div class="preview-chrome">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="url">inspireinterio.com / jewellery</span>
+        </div>
+        <div class="preview-img" style="background-image:url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1400&q=80')"></div>
+        <div class="preview-vignette"></div>
+        <div class="preview-tag">
+          <span class="swatch" style="background:var(--burgundy)"></span>
+          Luxury Retail
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="vertical">Vertical 03 — Jewellery</span>
+          <span>5 min read</span>
+        </div>
+        <h3>Your Jewellery Is Worth Lakhs.<br><em>Your Showroom Should Say So.</em></h3>
+        <p class="card-tagline">Design for trust. Engineer for the close.</p>
+        <p class="card-desc">For gold showrooms, diamond galleries, boutique jewellers and bridal stores. Precision lighting, VIP consultation zones and invisible security — turning browsers into high-ticket buyers.</p>
+        <div class="card-features">
+          <span>Display Lighting</span>
+          <span>VIP Consultation Room</span>
+          <span>Security Integration</span>
+          <span>Brand Ambience</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="inspire_interio_jewellery_landing.html" class="card-link">
+          View Landing Page
+          <span class="arrow">→</span>
+        </a>
+        <div class="card-stat"><b>15+</b> showroom projects<br>delivered</div>
+      </div>
+    </article>
 
-    <div class="coming-card">
-      <div class="coming-icon">🏡</div>
-      <h4>Residential Interiors</h4>
-      <p>Apartments, villas &amp; independent homes — living spaces that are as functional as they are beautiful.</p>
-      <div class="pills"><span>Coming soon</span></div>
-    </div>
+    <!-- ── RESIDENTIAL ───────────────────────── -->
+    <article class="gallery-card card--residential">
+      <a class="card-cover-link" href="inspire_interio_residential_landing.html" aria-label="Open Residential Interiors landing page">Open residential page</a>
+      <div class="preview">
+        <div class="preview-chrome">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="url">inspireinterio.com / residential</span>
+        </div>
+        <div class="preview-img" style="background-image:url('https://inspireinterio.com/wp-content/uploads/2024/10/Interiors-1.jpg')"></div>
+        <div class="preview-vignette"></div>
+        <div class="preview-tag">
+          <span class="swatch" style="background:var(--terracotta)"></span>
+          Homes
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="vertical">Vertical 04 — Residential</span>
+          <span>5 min read</span>
+        </div>
+        <h3>Your Home Should Feel Like <em>Home</em> — Not a Catalogue</h3>
+        <p class="card-tagline">Designed around how you actually live.</p>
+        <p class="card-desc">Apartments, villas and independent homes across Chennai. Warm, personalised interiors built to last — with 3D previews before a single wall is touched, and turnkey handover guaranteed on time.</p>
+        <div class="card-features">
+          <span>Living &amp; Dining</span>
+          <span>Master Bedroom</span>
+          <span>Custom Furniture</span>
+          <span>3D Pre-Design</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="inspire_interio_residential_landing.html" class="card-link">
+          View Landing Page
+          <span class="arrow">→</span>
+        </a>
+        <div class="card-stat"><b>260+</b> families moved in,<br>zero rework</div>
+      </div>
+    </article>
 
-    <div class="coming-card">
-      <div class="coming-icon">🍬</div>
-      <h4>Sweet Shop Interiors</h4>
-      <p>Mithai shops &amp; confectionery stores — warm, appetising spaces that make every visit a sensory experience.</p>
-      <div class="pills"><span>Coming soon</span></div>
-    </div>
+  </div>
 
+  <!-- Live gallery card — Sweet Shop (full width row) -->
+  <div class="gallery-grid" style="margin-top:32px;grid-template-columns:1fr">
+
+    <!-- ── SWEET SHOP ─────────────────────────── -->
+    <article class="gallery-card card--sweetshop" style="flex-direction:row;max-height:360px">
+      <a class="card-cover-link" href="inspire_interio_sweetshop_landing.html" aria-label="Open Sweet Shop Interiors landing page">Open sweet shop page</a>
+      <div class="preview" style="flex:0 0 45%;aspect-ratio:unset;min-height:0">
+        <div class="preview-chrome">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="url">inspireinterio.com / sweetshops</span>
+        </div>
+        <div class="preview-img" style="background-image:url('https://images.unsplash.com/photo-1613746203812-717e6e5db456?w=1400&q=80')"></div>
+        <div class="preview-vignette"></div>
+        <div class="preview-tag">
+          <span class="swatch" style="background:var(--maroon)"></span>
+          Food Retail
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;flex:1;min-width:0">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="vertical">Vertical 05 — Sweet Shops</span>
+            <span>5 min read</span>
+          </div>
+          <h3>Your Mithai Deserves a <em>Stage, Not a Shelf</em></h3>
+          <p class="card-tagline">Design the premium experience. Charge premium prices.</p>
+          <p class="card-desc">For mithai shops, confectionery stores and sweet chains. Appetising counter designs, festival-ready zones, café seating and gift-packaging walls that turn a quick purchase into an occasion — and justify a premium price tag.</p>
+          <div class="card-features">
+            <span>Sweet Counter Design</span>
+            <span>Festival &amp; Gift Zones</span>
+            <span>Café Seating</span>
+            <span>Warm Lighting</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="inspire_interio_sweetshop_landing.html" class="card-link">
+            View Landing Page
+            <span class="arrow">→</span>
+          </a>
+          <div class="card-stat"><b>20+</b> sweet shop interiors<br>delivered</div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Coming Soon — remaining verticals -->
+  <div class="gallery-grid" style="margin-top:32px">
     <div class="coming-card">
       <div class="coming-icon">🏨</div>
       <h4>Hospitality Interiors</h4>
       <p>Boutique hotels, cafés &amp; restaurants — immersive atmospheres that keep guests returning.</p>
       <div class="pills"><span>Coming soon</span></div>
     </div>
-
     <div class="coming-card">
       <div class="coming-icon">🏢</div>
       <h4>Workplace Interiors</h4>
       <p>Modern offices, co-working &amp; corporate HQs — environments designed around how people actually work.</p>
       <div class="pills"><span>Coming soon</span></div>
     </div>
-
   </div>
 </section>
 
@@ -609,9 +741,9 @@ footer{
       <ul>
         <li><a href="inspire_interio_clinic_landing.html">Clinic Interiors</a></li>
         <li><a href="inspire_interio_school_landing.html">School Interiors</a></li>
-        <li><a href="#">Jewellery (soon)</a></li>
-        <li><a href="#">Residential (soon)</a></li>
-        <li><a href="#">Sweet Shop (soon)</a></li>
+        <li><a href="inspire_interio_jewellery_landing.html">Jewellery Showrooms</a></li>
+        <li><a href="inspire_interio_residential_landing.html">Residential Homes</a></li>
+        <li><a href="inspire_interio_sweetshop_landing.html">Sweet Shops</a></li>
         <li><a href="#">Hospitality (soon)</a></li>
         <li><a href="#">Workplace (soon)</a></li>
       </ul>
