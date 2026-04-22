@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspire Interio — Clinic Interiors That Grow Your Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#FAF7F2;--cream:#F3EDE4;--warm-white:#FFFCF7;--charcoal:#1C1C1C;--deep-teal:#1A4A4A;--teal:#2A7A6E;--gold:#C4963C;--gold-light:#D4A64C;--text-primary:#1C1C1C;--text-secondary:#5A5548;--text-muted:#8A8578;--red-accent:#8B2020;--border:rgba(28,28,28,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ivory);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:rgba(250,247,242,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--deep-teal)}
+.nav-logo span{color:var(--gold)}
+.nav-cta{background:var(--deep-teal);color:#fff;padding:9px 20px;border-radius:6px;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .3s}
+.nav-cta:hover{background:var(--teal)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding:96px 40px 0;max-width:1200px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(26,74,74,0.06);border:1px solid rgba(26,74,74,0.12);font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--deep-teal);margin-bottom:14px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,3.8vw,48px);font-weight:700;line-height:1.12;color:var(--charcoal);margin-bottom:6px}
+.hero h1 em{font-style:italic;color:var(--deep-teal);position:relative}
+.hero h1 em::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:6px;background:rgba(196,150,60,0.25);transform:skewX(-6deg)}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(16px,1.8vw,22px);color:var(--gold);font-style:italic;margin-bottom:14px}
+.hero p{font-size:14px;line-height:1.6;color:var(--text-secondary);margin-bottom:20px}
+.hero-cta-group{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--deep-teal);color:#fff;padding:12px 26px;border-radius:6px;border:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,74,74,0.2)}
+.btn-secondary{background:transparent;color:var(--deep-teal);padding:12px 26px;border-radius:6px;border:1.5px solid rgba(26,74,74,0.25);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none}
+.btn-secondary:hover{border-color:var(--deep-teal);background:rgba(26,74,74,0.04)}
+
+/* HERO IMAGE GRID */
+.hero-right{display:flex;flex-direction:column;gap:12px}
+.hero-img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-img{border-radius:12px;overflow:hidden;position:relative;height:160px}
+.hero-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-img:hover img{transform:scale(1.05)}
+.hero-img-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:#fff;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+.hero-img.tall{grid-column:1/3;height:140px}
+.hero-stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.hero-stat{background:#fff;border-radius:10px;padding:12px 8px;text-align:center;border:1px solid var(--border)}
+.hero-stat .n{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--deep-teal)}
+.hero-stat .l{font-size:8px;color:var(--text-muted);letter-spacing:.5px;text-transform:uppercase;margin-top:2px}
+
+/* TICKER */
+.ticker{background:var(--deep-teal);color:rgba(255,255,255,0.85);padding:12px 32px;display:flex;justify-content:center;gap:32px;flex-wrap:wrap;font-size:12px;font-weight:500;margin-top:0}
+.ticker b{color:var(--gold)}
+
+/* PROBLEM - with image background */
+.problem{padding:56px 40px;background:var(--charcoal);color:#fff;position:relative;overflow:hidden}
+.problem::before{content:'';position:absolute;top:0;right:0;bottom:0;width:40%;background:url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80') center/cover no-repeat;opacity:.08}
+.problem .inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.section-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.problem h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:700;line-height:1.25;margin-bottom:28px;max-width:680px}
+.problem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.problem-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:22px;transition:all .3s;backdrop-filter:blur(4px)}
+.problem-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(196,150,60,0.3);transform:translateY(-3px)}
+.problem-icon{font-size:22px;margin-bottom:10px}
+.problem-card h3{font-size:14px;font-weight:600;margin-bottom:6px}
+.problem-card p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5}
+
+/* STATS */
+.stats{padding:56px 40px;background:linear-gradient(180deg,var(--cream) 0%,var(--ivory) 100%)}
+.stats .inner{max-width:1200px;margin:0 auto}
+.stats h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);text-align:center;margin-bottom:6px}
+.stats-sub{text-align:center;font-size:13px;color:var(--text-secondary);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.5}
+.stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.stat-card{background:#fff;border-radius:12px;padding:24px 14px;text-align:center;border:1px solid var(--border);transition:all .3s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--deep-teal),var(--gold));transform:scaleX(0);transition:transform .3s}
+.stat-card:hover::before{transform:scaleX(1)}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.07)}
+.stat-card .big{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--deep-teal);line-height:1}
+.stat-card .big .a{color:var(--gold)}
+.stat-card .desc{font-size:11px;color:var(--text-secondary);margin-top:6px;line-height:1.4}
+.stat-card .src{font-size:9px;color:var(--text-muted);margin-top:6px;font-style:italic}
+
+/* SHOWCASE STRIP */
+.showcase{padding:48px 40px;background:var(--ivory)}
+.showcase .inner{max-width:1200px;margin:0 auto}
+.showcase h2{font-family:'Playfair Display',serif;font-size:clamp(20px,2.4vw,30px);text-align:center;margin-bottom:8px}
+.showcase-sub{text-align:center;font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.showcase-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.showcase-item{border-radius:12px;overflow:hidden;position:relative;height:200px;cursor:pointer}
+.showcase-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.showcase-item:hover img{transform:scale(1.08)}
+.showcase-item .overlay{position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,0.75));color:#fff}
+.showcase-item .overlay h4{font-family:'Playfair Display',serif;font-size:14px;margin-bottom:2px}
+.showcase-item .overlay span{font-size:10px;opacity:.75;letter-spacing:.3px}
+
+/* SERVICES */
+.services{padding:56px 40px;background:var(--warm-white);position:relative;overflow:hidden}
+.services::before{content:'';position:absolute;top:0;left:0;bottom:0;width:35%;background:url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80') center/cover no-repeat;opacity:.04}
+.services .inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.services h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);text-align:center;margin-bottom:32px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:rgba(255,255,255,0.92);border-radius:12px;padding:24px;border:1px solid var(--border);transition:all .3s;backdrop-filter:blur(8px)}
+.svc:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,0,0,0.05);border-color:rgba(26,74,74,0.2)}
+.svc-icon{font-size:20px;margin-bottom:10px}
+.svc h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:6px}
+.svc p{font-size:12px;color:var(--text-secondary);line-height:1.5}
+.svc-tag{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:100px;font-size:9px;font-weight:600;letter-spacing:.4px;text-transform:uppercase}
+
+/* PROOF - with image bg */
+.proof{padding:52px 40px;position:relative;overflow:hidden;color:#fff}
+.proof-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80') center/cover no-repeat}
+.proof-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(26,74,74,0.92),rgba(26,74,74,0.88))}
+.proof .inner{max-width:1000px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.proof h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:6px}
+.proof-sub{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:28px}
+.proof-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.proof-item{padding:20px 10px;border:1px solid rgba(255,255,255,0.15);border-radius:10px;background:rgba(255,255,255,0.06);transition:all .3s;backdrop-filter:blur(4px)}
+.proof-item:hover{background:rgba(255,255,255,0.12);border-color:rgba(196,150,60,0.4)}
+.proof-item .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold)}
+.proof-item .lbl{font-size:10px;color:rgba(255,255,255,0.65);margin-top:4px;line-height:1.3}
+
+/* PROCESS */
+.process{padding:56px 40px;background:var(--ivory)}
+.process .inner{max-width:1000px;margin:0 auto;text-align:center}
+.process h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:32px}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.step{padding:16px;position:relative}
+.step::after{content:'→';position:absolute;right:-6px;top:36px;font-size:16px;color:var(--gold)}
+.step:last-child::after{display:none}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--deep-teal);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin:0 auto 10px}
+.step h3{font-size:13px;font-weight:600;margin-bottom:4px}
+.step p{font-size:11px;color:var(--text-muted);line-height:1.4}
+
+/* FOUNDER */
+.founder{padding:40px;position:relative;overflow:hidden}
+.founder-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1400&q=80') center/cover no-repeat}
+.founder-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(243,237,228,0.95),rgba(243,237,228,0.9))}
+.founder .inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:24px;position:relative;z-index:1}
+.founder-avatar{width:80px;height:80px;border-radius:50%;background:var(--deep-teal);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:#fff;font-weight:700;border:2px solid var(--gold);flex-shrink:0}
+.founder-info h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:2px}
+.founder-title{font-size:12px;color:var(--gold);font-weight:600;margin-bottom:8px}
+.founder-info p{font-size:12px;color:var(--text-secondary);line-height:1.55}
+.founder-creds{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.founder-cred{padding:3px 10px;border-radius:100px;background:rgba(26,74,74,0.1);font-size:9px;font-weight:600;color:var(--deep-teal)}
+
+/* CTA */
+.cta-section{padding:56px 40px;position:relative;overflow:hidden;color:#fff}
+.cta-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=80') center/cover no-repeat}
+.cta-bg::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(28,28,28,0.94),rgba(42,42,42,0.92))}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;position:relative;z-index:1}
+.cta-text h2{font-family:'Playfair Display',serif;font-size:clamp(22px,2.8vw,34px);margin-bottom:12px;line-height:1.2}
+.cta-text h2 em{color:var(--gold);font-style:italic}
+.cta-text p{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.55;margin-bottom:16px}
+.cta-urgency{display:inline-flex;align-items:center;gap:6px;background:rgba(196,150,60,0.12);border:1px solid rgba(196,150,60,0.25);padding:7px 12px;border-radius:6px;font-size:11px;font-weight:600;color:var(--gold-light)}
+.cta-urgency::before{content:'⏱'}
+.cta-benefits{margin-top:20px}
+.cta-benefits li{list-style:none;font-size:12px;color:rgba(255,255,255,0.65);margin-bottom:8px;padding-left:18px;position:relative;line-height:1.45}
+.cta-benefits li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700}
+.cta-form{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:28px;backdrop-filter:blur(12px)}
+.cta-form h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:16px;text-align:center}
+.fg{margin-bottom:10px}
+.fg label{display:block;font-size:9px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:3px}
+.fg input,.fg select,.fg textarea{width:100%;padding:9px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;transition:all .3s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,0.25)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,0.08)}
+.fg select option{background:var(--charcoal)}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-submit{width:100%;padding:13px;border-radius:6px;border:none;background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--charcoal);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;margin-top:4px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,150,60,0.3)}
+.form-note{text-align:center;font-size:10px;color:rgba(255,255,255,0.3);margin-top:6px}
+
+/* FOOTER */
+.footer{padding:28px 40px;background:var(--charcoal);color:rgba(255,255,255,0.4);text-align:center;font-size:11px;border-top:1px solid rgba(255,255,255,0.06)}
+.footer a{color:var(--gold);text-decoration:none}
+.footer-contact{margin-bottom:6px;font-size:13px;color:rgba(255,255,255,0.7)}
+.footer-contact strong{color:#fff}
+
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.reveal{opacity:0;transform:translateY(25px);transition:all .6s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;padding:88px 24px 36px}
+  .problem-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:repeat(3,1fr)}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .proof-grid{grid-template-columns:repeat(3,1fr)}
+  .cta-inner{grid-template-columns:1fr}
+  .showcase-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .hero{padding:78px 16px 28px}
+  .problem-grid,.stats-grid,.services-grid,.process-steps{grid-template-columns:1fr}
+  .proof-grid,.showcase-grid{grid-template-columns:1fr 1fr}
+  .step::after{display:none}
+  .ticker{gap:12px;font-size:10px}
+  .founder .inner{flex-direction:column;text-align:center}
+  .founder-creds{justify-content:center}
+  .fr{grid-template-columns:1fr}
+  .hero-cta-group{flex-direction:column}
+  .hero-img-row{grid-template-columns:1fr}
+  .hero-stats-bar{grid-template-columns:1fr 1fr}
+  .btn-primary,.btn-secondary{width:100%;text-align:center;justify-content:center}
+  .problem,.stats,.services,.proof,.process,.cta-section,.founder,.footer,.showcase{padding-left:16px;padding-right:16px}
+  .problem::before,.services::before{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-logo">Inspire <span>Interio</span></div><button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book Free Consultation</button></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">Clinic Interior Specialists — Bengaluru</div>
+    <h1>Your Clinic's Interior Is <em>Losing You Patients</em></h1>
+    <div class="hero-sub">Design that heals. Interiors that sell.</div>
+    <p>70% of patients who leave a clinic cite perceived indifference — not medical skill. Outdated interiors silently erode trust, spike anxiety, and push patients to competitors. We build clinic environments that create instant confidence.</p>
+    <div class="hero-cta-group">
+      <a href="#booking" class="btn-primary">Schedule Free Design Audit →</a>
+      <a href="#stats" class="btn-secondary">See The Data</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-row">
+      <div class="hero-img">
+        <img src="https://inspireinterio.com/wp-content/uploads/2026/02/kosmoderma-4.jpeg" alt="Skin Clinic Interior by Inspire Interio">
+        <div class="hero-img-label">Skin Clinic — Bangalore</div>
+      </div>
+      <div class="hero-img">
+        <img src="https://inspireinterio.com/wp-content/uploads/2026/02/kosmoderma-12.jpeg" alt="Clinic Reception Design">
+        <div class="hero-img-label">Clinic Reception</div>
+      </div>
+    </div>
+    <div class="hero-img-row">
+      <div class="hero-img tall">
+        <img src="https://inspireinterio.com/wp-content/uploads/2026/02/kosmoderma-8.jpeg" alt="Commercial Clinic Interior">
+        <div class="hero-img-label">Kosmoderma — Full Clinic Fit-Out by Inspire Interio</div>
+      </div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="hero-stat"><div class="n">40+</div><div class="l">Clinic Projects</div></div>
+      <div class="hero-stat"><div class="n">2L+</div><div class="l">Sq Ft Done</div></div>
+      <div class="hero-stat"><div class="n">13+</div><div class="l">Years Exp</div></div>
+      <div class="hero-stat"><div class="n">100+</div><div class="l">Vendors</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker"><span><b>250+</b> Residential Projects</span><span><b>40+</b> Commercial & Clinic Interiors</span><span><b>₹56Cr</b> Portfolio Managed</span><span><b>1,500+</b> Professionals Trained</span><span><b>IIM Mumbai</b> Certified</span></div>
+
+<!-- PROBLEM -->
+<section class="problem"><div class="inner">
+  <div class="section-label reveal">The Silent Revenue Killer</div>
+  <h2 class="reveal">Most clinics spend lakhs on equipment but treat interiors as an afterthought. Here's what that costs you.</h2>
+  <div class="problem-grid">
+    <div class="problem-card reveal"><div class="problem-icon">😰</div><h3>Patient Anxiety Spikes</h3><p>Harsh lighting and sterile walls trigger stress. Anxious patients skip follow-ups and avoid referrals — retention drops from 80% to below 50%.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">🚪</div><h3>Silent Walk-Outs</h3><p>Patients judge your expertise in 8 seconds. A dated reception says "this doctor doesn't invest in quality" — they quietly find a competitor.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">📉</div><h3>Staff Burnout</h3><p>No break areas, poor ergonomics, chaotic layouts — clinical errors rise, turnover accelerates. Replacing one nurse costs ₹1.5–3L.</p></div>
+    <div class="problem-card reveal"><div class="problem-icon">⭐</div><h3>Review Damage</h3><p>"The clinic felt outdated." 50% of patients check reviews before booking. One comment about ambience kills months of marketing spend.</p></div>
+  </div>
+</div></section>
+
+<!-- STATS -->
+<section class="stats" id="stats"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--deep-teal)">Research-Backed Impact</div>
+  <h2 class="reveal">The Numbers Behind Clinic Design</h2>
+  <p class="stats-sub reveal">Published healthcare research proves clinic environments directly impact patient behaviour, staff output, and revenue.</p>
+  <div class="stats-grid">
+    <div class="stat-card reveal"><div class="big">25<span class="a">%</span></div><div class="desc">Profit increase from just 5% better retention</div><div class="src">Bain & Company</div></div>
+    <div class="stat-card reveal"><div class="big">3<span class="a">x</span></div><div class="desc">More referrals from high-trust patients</div><div class="src">Beryl Institute</div></div>
+    <div class="stat-card reveal"><div class="big">6-7<span class="a">x</span></div><div class="desc">Costlier to acquire vs retain a patient</div><div class="src">Industry Benchmark</div></div>
+    <div class="stat-card reveal"><div class="big">18<span class="a">%</span></div><div class="desc">Satisfaction gain from better environments</div><div class="src">J. Healthcare Mgmt</div></div>
+    <div class="stat-card reveal"><div class="big">70<span class="a">%</span></div><div class="desc">Leave due to indifference, not skill</div><div class="src">Healthcare Success</div></div>
+  </div>
+</div></section>
+
+<!-- SHOWCASE -->
+<section class="showcase"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--deep-teal)">Our Work</div>
+  <h2 class="reveal">Spaces We've Transformed</h2>
+  <p class="showcase-sub reveal">Real projects. Real results. From skin clinics to corporate offices across Bangalore.</p>
+  <div class="showcase-grid">
+    <div class="showcase-item reveal">
+      <img src="https://inspireinterio.com/wp-content/uploads/2026/02/kosmoderma-4.jpeg" alt="Clinic Interior">
+      <div class="overlay"><h4>Kosmoderma Skin Clinic</h4><span>Dermatology · Bangalore</span></div>
+    </div>
+    <div class="showcase-item reveal">
+      <img src="https://inspireinterio.com/wp-content/uploads/2024/10/Interiors-5.jpg" alt="Commercial Interior">
+      <div class="overlay"><h4>Corporate Office</h4><span>Commercial · Whitefield</span></div>
+    </div>
+    <div class="showcase-item reveal">
+      <img src="https://inspireinterio.com/wp-content/uploads/2026/02/Robert-4.jpeg" alt="Residential Interior">
+      <div class="overlay"><h4>Residential Interior</h4><span>Premium Villa · Bangalore</span></div>
+    </div>
+    <div class="showcase-item reveal">
+      <img src="https://inspireinterio.com/wp-content/uploads/2026/02/Santhosh-3d-19.jpeg" alt="3D Visualization">
+      <div class="overlay"><h4>3D Visualization</h4><span>Pre-Execution Render</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- SERVICES -->
+<section class="services"><div class="inner">
+  <div class="section-label reveal" style="text-align:center;color:var(--deep-teal)">Clinic-Specific Services</div>
+  <h2 class="reveal">Designed for Healthcare. Executed by Veterans.</h2>
+  <div class="services-grid">
+    <div class="svc reveal"><div class="svc-icon">🏥</div><h3>Clinic Space Planning</h3><p>Patient flow optimization, consultation-to-procedure pathways, privacy-compliant layouts that reduce wait times and maximize throughput.</p><span class="svc-tag" style="background:rgba(26,74,74,0.06);color:var(--deep-teal)">Layout & Flow</span></div>
+    <div class="svc reveal"><div class="svc-icon">✨</div><h3>Reception & Waiting Design</h3><p>Calming colour psychology, biophilic elements, ambient lighting, ergonomic seating — engineering the first impression that says "premium care."</p><span class="svc-tag" style="background:rgba(196,150,60,0.08);color:var(--gold)">Trust Building</span></div>
+    <div class="svc reveal"><div class="svc-icon">🩺</div><h3>Treatment Room Fit-Outs</h3><p>Clinical-grade finishes, antimicrobial surfaces, optimal procedure lighting, integrated equipment mounting, smart storage.</p><span class="svc-tag" style="background:rgba(184,201,184,0.2);color:var(--teal)">Clinical Grade</span></div>
+    <div class="svc reveal"><div class="svc-icon">🎨</div><h3>Brand Identity Integration</h3><p>Clinic colours, logo, and brand story woven into signage, walls, and staff stations — cohesive identity patients remember and trust.</p><span class="svc-tag" style="background:rgba(139,32,32,0.06);color:var(--red-accent)">Branding</span></div>
+    <div class="svc reveal"><div class="svc-icon">🔧</div><h3>Turnkey Execution</h3><p>3D renders → procurement (100+ vendors) → site work → quality audit → handover. One team. Zero vendor coordination headache.</p><span class="svc-tag" style="background:rgba(26,74,74,0.06);color:var(--deep-teal)">End-to-End</span></div>
+    <div class="svc reveal"><div class="svc-icon">🔄</div><h3>Renovation & Upgrades</h3><p>Refresh without full shutdown. Phased approach keeps your practice running — transform one zone at a time, zero revenue loss.</p><span class="svc-tag" style="background:rgba(196,150,60,0.08);color:var(--gold)">Zero Downtime</span></div>
+  </div>
+</div></section>
+
+<!-- PROOF -->
+<section class="proof">
+  <div class="proof-bg"></div>
+  <div class="inner">
+    <div class="section-label reveal">Execution Track Record</div>
+    <h2 class="reveal">Built on Delivery, Not Promises</h2>
+    <p class="proof-sub reveal">13+ years from Dubai's corporate banks to Bangalore's clinics. Ex-HomeLane, Design Cafe, Bonito Designs & Flipspaces.</p>
+    <div class="proof-grid">
+      <div class="proof-item reveal"><div class="num">250+</div><div class="lbl">Residential Projects</div></div>
+      <div class="proof-item reveal"><div class="num">40+</div><div class="lbl">Commercial & Clinic</div></div>
+      <div class="proof-item reveal"><div class="num">2L+</div><div class="lbl">Sq Ft Executed</div></div>
+      <div class="proof-item reveal"><div class="num">₹56Cr</div><div class="lbl">Portfolio Managed</div></div>
+      <div class="proof-item reveal"><div class="num">100+</div><div class="lbl">Vendor Network</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process"><div class="inner">
+  <div class="section-label reveal" style="color:var(--deep-teal)">How It Works</div>
+  <h2 class="reveal">First Call to Grand Opening — 4 Steps</h2>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">1</div><h3>Free Design Audit</h3><p>We visit your clinic, assess patient flow, identify design gaps — zero cost.</p></div>
+    <div class="step reveal"><div class="step-num">2</div><h3>3D Visualization</h3><p>Photorealistic renders of every zone before a single wall is touched.</p></div>
+    <div class="step reveal"><div class="step-num">3</div><h3>Turnkey Execution</h3><p>Procurement, vendors, site work, quality audits. Regular updates. No surprises.</p></div>
+    <div class="step reveal"><div class="step-num">4</div><h3>Handover & Support</h3><p>Walk into a clinic that builds trust instantly. Post-handover support included.</p></div>
+  </div>
+</div></section>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="founder-bg"></div>
+  <div class="inner reveal">
+    <div class="founder-avatar">AS</div>
+    <div class="founder-info">
+      <h3>Anand Selvarajan</h3>
+      <div class="founder-title">Founder & CEO — Inspire Interio, Bengaluru</div>
+      <p>13+ years executing interiors across Dubai and India. Former execution leader at HomeLane, Design Cafe, Bonito Designs & Flipspaces. Managed ₹7Cr+ procurement, 350+ product categories. IIM Mumbai — Supply Chain Analytics. BNI India & RISE Global member.</p>
+      <div class="founder-creds"><span class="founder-cred">Dubai + India</span><span class="founder-cred">IIM Mumbai</span><span class="founder-cred">BNI Member</span><span class="founder-cred">RISE Global</span><span class="founder-cred">1,500+ Trained</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="booking">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="section-label">Let's Talk</div>
+      <h2>Your Patients Deserve a Clinic That <em>Feels Like Care</em></h2>
+      <p>Every week you wait, patients form impressions in your current space — some are quietly choosing a competitor with a better waiting room.</p>
+      <div class="cta-urgency">Limited to 3 free design audits per month — April slots closing</div>
+      <ul class="cta-benefits">
+        <li>Free on-site clinic assessment & opportunity report</li>
+        <li>3D visualization before any work starts</li>
+        <li>Phased execution — your clinic stays open</li>
+        <li>100+ vendor network = best rates guaranteed</li>
+        <li>Single point of contact from design to handover</li>
+        <li>Post-completion support & adjustments included</li>
+      </ul>
+    </div>
+    <div class="cta-form">
+      <h3>Book Your Free Design Audit</h3>
+      <div class="fg"><label>Your Name</label><input type="text" placeholder="Dr. / Mr. / Ms."></div>
+      <div class="fr"><div class="fg"><label>Phone</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div><div class="fg"><label>Email</label><input type="email" placeholder="you@clinic.com"></div></div>
+      <div class="fg"><label>Clinic Type</label><select><option value="">Select your speciality</option><option>Dermatology / Skin Clinic</option><option>Dental Clinic</option><option>Eye Care / Ophthalmology</option><option>Orthopaedic / Physiotherapy</option><option>Paediatric Clinic</option><option>General Practice</option><option>Cosmetic / Aesthetic Clinic</option><option>Multi-Speciality Clinic</option><option>Other</option></select></div>
+      <div class="fr"><div class="fg"><label>Clinic Area</label><select><option value="">Approx. size</option><option>Under 500 sq ft</option><option>500 – 1,000 sq ft</option><option>1,000 – 2,000 sq ft</option><option>2,000 – 5,000 sq ft</option><option>5,000+ sq ft</option></select></div><div class="fg"><label>Project Type</label><select><option value="">Select</option><option>New Clinic Setup</option><option>Renovation / Refresh</option><option>Expansion</option><option>Just Exploring</option></select></div></div>
+      <div class="fg"><label>Anything else?</label><textarea rows="2" placeholder="Budget, timeline, pain points..."></textarea></div>
+      <button class="form-submit" onclick="handleSubmit()">Book My Free Design Audit →</button>
+      <div class="form-note">No spam. No pressure. Just a 15-minute call with Anand.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-contact"><strong>Inspire Interio</strong> &nbsp;|&nbsp; 📞 +91 75388 47073 &nbsp;|&nbsp; ✉ info@inspireinterio.com</div>
+  <div>1st Floor, No 5, 11th A Cross, Brindavan Layout, Horamavu, Bengaluru 560043</div>
+  <div style="margin-top:6px"><a href="https://inspireinterio.com" target="_blank">inspireinterio.com</a> &nbsp;|&nbsp; <a href="https://www.linkedin.com/in/anand-selvarajan-195a3646/" target="_blank">LinkedIn</a> &nbsp;|&nbsp; <a href="https://www.instagram.com/inspire.interio" target="_blank">Instagram</a></div>
+  <div style="margin-top:8px;font-size:9px">© 2026 Inspire Interio. Dream Unlimited.</div>
+</footer>
+
+<script>
+document.querySelectorAll('.reveal').forEach(el=>{new IntersectionObserver(([e])=>{if(e.isIntersecting)e.target.classList.add('visible')},{threshold:.1,rootMargin:'0px 0px -30px 0px'}).observe(el)});
+function handleSubmit(){const b=document.querySelector('.form-submit');b.textContent='✓ Sent! We will Call Within 24 Hours';b.style.background='var(--teal)';b.style.color='#fff';b.disabled=true;setTimeout(()=>{b.textContent='Book My Free Design Audit →';b.style.background='';b.style.color='';b.disabled=false},4000)}
+</script>
+</body>
+</html>

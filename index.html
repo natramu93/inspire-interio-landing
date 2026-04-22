@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspire Interio — Transform Your Space</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #FAF7F2;
+    --charcoal: #1C1C1C;
+    --deep-teal: #1A4A4A;
+    --teal: #2A7A6E;
+    --gold: #C4963C;
+    --deep-blue: #1E3A5F;
+    --blue: #2563A8;
+    --text-secondary: #5A5548;
+    --border: rgba(28,28,28,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--ivory);
+    color: var(--charcoal);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 14px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(250,247,242,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--deep-teal);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    padding: 140px 40px 80px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 16px; border-radius: 100px;
+    background: rgba(26,74,74,0.06);
+    border: 1px solid rgba(26,74,74,0.15);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--deep-teal);
+    margin-bottom: 20px;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--teal);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700; line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--deep-teal);
+    position: relative;
+  }
+  .hero h1 em::after {
+    content: ''; position: absolute;
+    bottom: 2px; left: 0; right: 0; height: 6px;
+    background: rgba(196,150,60,0.25);
+    transform: skewX(-6deg);
+  }
+  .hero p {
+    font-size: 16px; line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 520px; margin: 0 auto 48px;
+  }
+
+  /* CARDS */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex; flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+  .card-header {
+    padding: 36px 32px 24px;
+    position: relative;
+  }
+  .card--clinic .card-header { background: linear-gradient(135deg, #1A4A4A 0%, #2A7A6E 100%); }
+  .card--school .card-header { background: linear-gradient(135deg, #1E3A5F 0%, #2563A8 100%); }
+
+  .card-icon {
+    width: 56px; height: 56px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: #fff; line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .card-header p {
+    font-size: 13px; color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+  .card-body {
+    padding: 24px 32px 28px;
+    display: flex; flex-direction: column; gap: 12px;
+    flex: 1;
+  }
+  .card-feature {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--text-secondary);
+  }
+  .card-feature::before {
+    content: '✓';
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .card--clinic .card-feature::before { background: rgba(26,74,74,0.1); color: var(--deep-teal); }
+  .card--school .card-feature::before { background: rgba(30,58,95,0.1); color: var(--deep-blue); }
+  .card-cta {
+    display: block;
+    margin: 8px 32px 28px;
+    padding: 13px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px; font-weight: 600;
+    color: #fff; text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .card--clinic .card-cta { background: var(--deep-teal); }
+  .card--school .card-cta { background: var(--deep-blue); }
+  .card-cta:hover { opacity: 0.85; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 24px 40px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  footer strong {
+    font-family: 'Playfair Display', serif;
+    color: var(--deep-teal);
+  }
+
+  @media (max-width: 600px) {
+    .nav { padding: 14px 20px; }
+    .hero { padding: 120px 20px 60px; }
+    .cards { padding: 0 20px 80px; }
+    .card-header { padding: 28px 24px 20px; }
+    .card-body { padding: 20px 24px 20px; }
+    .card-cta { margin: 8px 24px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-logo" href="#">Inspire <span>Interio</span></a>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">Interior Design Studio</div>
+  <h1>Spaces That <em>Inspire</em><br>Results That Last</h1>
+  <p>We design purposeful interiors for clinics and schools — blending aesthetics with functionality to grow your practice and enhance learning outcomes.</p>
+</section>
+
+<div class="cards">
+
+  <a class="card card--clinic" href="inspire_interio_clinic_landing.html">
+    <div class="card-header">
+      <div class="card-icon">🏥</div>
+      <h2>Clinic Interiors</h2>
+      <p>Transform your clinic into a space that builds trust and grows your practice.</p>
+    </div>
+    <div class="card-body">
+      <div class="card-feature">Patient-first waiting room design</div>
+      <div class="card-feature">Treatment room layouts that boost efficiency</div>
+      <div class="card-feature">Brand-aligned colour & material palette</div>
+      <div class="card-feature">NABH-compliant space planning</div>
+    </div>
+    <a class="card-cta" href="inspire_interio_clinic_landing.html">Explore Clinic Design →</a>
+  </a>
+
+  <a class="card card--school" href="inspire_interio_school_landing.html">
+    <div class="card-header">
+      <div class="card-icon">🏫</div>
+      <h2>School Interiors</h2>
+      <p>Craft learning environments that boost admissions and inspire every student.</p>
+    </div>
+    <div class="card-body">
+      <div class="card-feature">Classroom designs that improve focus</div>
+      <div class="card-feature">Activity zones for holistic development</div>
+      <div class="card-feature">Safety-first material selection</div>
+      <div class="card-feature">Brand identity through spatial storytelling</div>
+    </div>
+    <a class="card-cta" href="inspire_interio_school_landing.html">Explore School Design →</a>
+  </a>
+
+</div>
+
+<footer>
+  &copy; 2026 <strong>Inspire Interio</strong>. All rights reserved.
+</footer>
+
+</body>
+</html>
