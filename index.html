@@ -320,6 +320,16 @@ img{display:block;max-width:100%}
   color:var(--ink-2);letter-spacing:.3px;
 }
 
+/* ── COMING GRID — 3 cols for expanded collection ─────── */
+.coming-grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:32px;
+}
+@media(max-width:900px){.coming-grid-3{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.coming-grid-3{grid-template-columns:1fr}}
+
 /* ── STUDIO INTRO STRIP ──────────────────────────────── */
 .studio{
   padding:80px 48px;
@@ -520,20 +530,44 @@ footer{
 
   </div>
 
-  <!-- "Coming Soon" placeholder row -->
-  <div class="gallery-grid" style="margin-top:32px">
+  <!-- Coming Soon vertical cards -->
+  <div class="coming-grid-3">
+
+    <div class="coming-card">
+      <div class="coming-icon">💍</div>
+      <h4>Jewellery Shop Interiors</h4>
+      <p>Luxury showrooms &amp; boutique jewellers — lighting, display and brand ambience that drive desire and dwell time.</p>
+      <div class="pills"><span>Coming soon</span></div>
+    </div>
+
+    <div class="coming-card">
+      <div class="coming-icon">🏡</div>
+      <h4>Residential Interiors</h4>
+      <p>Apartments, villas &amp; independent homes — living spaces that are as functional as they are beautiful.</p>
+      <div class="pills"><span>Coming soon</span></div>
+    </div>
+
+    <div class="coming-card">
+      <div class="coming-icon">🍬</div>
+      <h4>Sweet Shop Interiors</h4>
+      <p>Mithai shops &amp; confectionery stores — warm, appetising spaces that make every visit a sensory experience.</p>
+      <div class="pills"><span>Coming soon</span></div>
+    </div>
+
     <div class="coming-card">
       <div class="coming-icon">🏨</div>
       <h4>Hospitality Interiors</h4>
-      <p>Boutique hotels, cafés &amp; restaurants. In design — coming next.</p>
+      <p>Boutique hotels, cafés &amp; restaurants — immersive atmospheres that keep guests returning.</p>
       <div class="pills"><span>Coming soon</span></div>
     </div>
+
     <div class="coming-card">
       <div class="coming-icon">🏢</div>
       <h4>Workplace Interiors</h4>
-      <p>Modern offices, co-working &amp; corporate HQs. In design — coming next.</p>
+      <p>Modern offices, co-working &amp; corporate HQs — environments designed around how people actually work.</p>
       <div class="pills"><span>Coming soon</span></div>
     </div>
+
   </div>
 </section>
 
@@ -575,6 +609,9 @@ footer{
       <ul>
         <li><a href="inspire_interio_clinic_landing.html">Clinic Interiors</a></li>
         <li><a href="inspire_interio_school_landing.html">School Interiors</a></li>
+        <li><a href="#">Jewellery (soon)</a></li>
+        <li><a href="#">Residential (soon)</a></li>
+        <li><a href="#">Sweet Shop (soon)</a></li>
         <li><a href="#">Hospitality (soon)</a></li>
         <li><a href="#">Workplace (soon)</a></li>
       </ul>
